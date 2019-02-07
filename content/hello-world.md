@@ -1,7 +1,7 @@
 Title: 在Nginx上配置Pelican
 Date: 2019-01-06
 Category: Misc
-Tags： Centos, Pelican, Nginx
+Tags: Centos, Pelican, Nginx
 
 # 安装Pelican
 ## 安装scl
