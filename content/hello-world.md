@@ -15,8 +15,8 @@ Tags： Centos, Pelican, Nginx
 
 ## 正式安装Pelican
 * `pip install pelican`
-* `pip install markdown` 如果想用`markdown`的话
-*  `pelican quick-start` 快速创建 [ref](http://docs.getpelican.com/en/stable/)
+* `pip install markdown` 如果想用 `markdown`的话
+* `pelican quick-start` 快速创建 [ref](http://docs.getpelican.com/en/stable/)
 * 开始你的写作
 
 # 安装Nginx
