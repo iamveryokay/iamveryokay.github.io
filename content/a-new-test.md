@@ -17,8 +17,10 @@ Tags： Pelican
 
 # 从github第一次clone pelican
 注意主题elegant是一个submodule([ref](https://git-scm.com/book/en/v2/Git-Tools-Submodules))，需要执行以下步骤：
+
 * `git submodule init`
 * `git submodule update`
-这样以后主题就会下载下来，然后再`pelican output`、`nginx -s reload`就可以更新网页了。
+这样以后主题就会下载下来，然后再`pelican content`、`nginx -s reload`就可以更新网页了。
+* 以后可以用`git pull`来更新代码，然后`pelican content`、`nginx -s reload`
 
 
