@@ -15,4 +15,10 @@ Tags： Pelican
 # 预览pelican
 * `python -m http.server`，然后在浏览器输入`localhost:8000`就可以看到，我的chrome好像有缓存，所以预览的时候还是原来的页面，重开了隐身模式才搞定。
 
+# 从github第一次clone pelican
+注意主题elegant是一个submodule([ref](https://git-scm.com/book/en/v2/Git-Tools-Submodules))，需要执行以下步骤：
+* `git submodule init`
+* `git submodule update`
+这样以后主题就会下载下来，然后再`pelican output`、`nginx -s reload`就可以更新网页了。
+
 
