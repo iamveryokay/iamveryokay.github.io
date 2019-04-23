@@ -15,7 +15,7 @@ class Solution:
                     return [i, j]
 ```
 ## Good practice
-主要思想是用到了字典，字典的key是要配对的值，value是索引，然后只要一遍循环就可以了。
+主要思想是用到了字典，字典的key是要配对的值，value是索引。如果这个值在字典中没有，那么就把target减去这个值作为新的key，这个值的索引作为value存到字典中；如果读到的值存在在字典里，就说明配对成功，直接获取这个key对应的value，返回当前遍历到的索引和字典中读取的索引即可。然后只要一遍循环就可以了。
 ```python
 def twoSum(self, num, target):
     d = {}
