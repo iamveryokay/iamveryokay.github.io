@@ -2,7 +2,7 @@ Title: 使用colab下载YouTube视频
 Date: 2019-04-28
 Category: Misc
 Modified: 2019-04-28 23:04
-Tags： Colab, Youtube-dl
+Tags: Colab, Youtube-dl
 
 # 动机
 谷歌推出了类似jupyter notebook的云端python笔记表，同时还可以通过在命令行前面加上感叹号的形式访问远程的Ubuntu容器。这让我萌生了以彼之矛，破彼之盾的想法，用谷歌自家提供的平台下载自家的视频，岂不快哉？
