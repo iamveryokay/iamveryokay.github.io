@@ -5,7 +5,7 @@ Modified: 2019-10-15 22:32
 Tags: Program, Algorithm
 
 # 砖墙
-### 超时版本
+## 超时版本
 ```python
 class Solution:
     def leastBricks(self, wall: List[List[int]]) -> int:
@@ -29,4 +29,40 @@ class Solution:
                 total_min = tmp_min
         return total_min
                 
+```
+
+## AC版本
+```python
+class Solution:
+    def leastBricks(self, wall: List[List[int]]) -> int:
+        num_dict = dict()
+        num_max = len(wall)
+        for i in wall:
+            tmp_num = 0
+            for j in i:
+                tmp_num += j
+                if not tmp_num in num_dict:
+                    num_dict[tmp_num] = 1
+                else:
+                    num_dict[tmp_num] += 1
+        num_dict.pop(max(num_dict.keys()))
+        if len(num_dict) == 0:
+            return num_max
+        else:
+            return num_max - max(num_dict.values())
+```
+ 
+# 反转整数
+```python
+def reverse(x: int) -> int:
+    if x < 0:
+        sign = -1
+    else:
+        sign = 1
+    x_str = str(x * sign)
+    x_reverse = x_str[::-1]
+    ans = sign * int(x_reverse)
+    if not -2 ** 31 <= ans <= 2 ** 31 - 1:
+        return 0
+    return ans
 ```
