@@ -5,6 +5,7 @@ from __future__ import unicode_literals
 AUTHOR = 'iamveryokay'
 SITENAME = "iamveryokay's space"
 SITEURL = 'https://iamveryokay.github.io/myblog'
+#SITEURL = ''
 
 PATH = 'content'
 
@@ -35,6 +36,3 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 THEME = 'elegant'
-TAGS_URL = 'tags.html'
-CATEGORIES_URL = 'categories.html'
-ARCHIVES_URL = 'archives.html'
