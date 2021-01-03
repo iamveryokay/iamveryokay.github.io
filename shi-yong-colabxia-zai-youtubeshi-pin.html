@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="https://iamveryokay.github.io/myblog/theme/css/elegant.prod.9e9d5ce754.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="https://iamveryokay.github.io/myblog/theme/css/custom.css" media="screen">
+
+        <link rel="dns-prefetch" href="//fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+
+        <meta name="author" content="iamveryokay" />
+
+        <meta property="og:type" content="article" />
+        <meta name="twitter:card" content="summary">
+
+<meta name="keywords" content="Colab, Youtube-dl, Misc, " />
+
+<meta property="og:title" content="使用colab下载YouTube视频 "/>
+<meta property="og:url" content="https://iamveryokay.github.io/myblog/shi-yong-colabxia-zai-youtubeshi-pin.html" />
+<meta property="og:description" content="动机 谷歌推出了类似jupyter notebook的云端python笔记表，同时还可以通过在命令行前面加上感叹号的形式访问远程的Ubuntu容器。这让我萌生了以彼之矛，破彼之盾的想法，用谷歌自家提供的平台下载自家的视频，岂不快哉？ 下载流程 配置pip，配置好以后就可以在容器中使用youtube_dl下载视频了 !pip install youtube_dl 下载视频 !youtube-dl -o &#34;./%(title)s.%(ext)s&#34; https://www.youtube.com/watch?v=FVFPRstvlvk 查看下载的视频 !ls 把视频从容器中下载到本地目录，复制刚刚查看的内容到下面的函数里 from google.colab import files files.download(&#39;AVENGERS 4 ENDGAME - 8 Minute Trailers (4K ULTRA HD) NEW 2019 …" />
+<meta property="og:site_name" content="iamveryokay&#39;s space" />
+<meta property="og:article:author" content="iamveryokay" />
+<meta property="og:article:published_time" content="2019-04-28T00:00:00+08:00" />
+<meta property="og:article:modified_time" content="2019-04-28T23:04:00+08:00" />
+<meta name="twitter:title" content="使用colab下载YouTube视频 ">
+<meta name="twitter:description" content="动机 谷歌推出了类似jupyter notebook的云端python笔记表，同时还可以通过在命令行前面加上感叹号的形式访问远程的Ubuntu容器。这让我萌生了以彼之矛，破彼之盾的想法，用谷歌自家提供的平台下载自家的视频，岂不快哉？ 下载流程 配置pip，配置好以后就可以在容器中使用youtube_dl下载视频了 !pip install youtube_dl 下载视频 !youtube-dl -o &#34;./%(title)s.%(ext)s&#34; https://www.youtube.com/watch?v=FVFPRstvlvk 查看下载的视频 !ls 把视频从容器中下载到本地目录，复制刚刚查看的内容到下面的函数里 from google.colab import files files.download(&#39;AVENGERS 4 ENDGAME - 8 Minute Trailers (4K ULTRA HD) NEW 2019 …">
+
+        <title>使用colab下载YouTube视频  · iamveryokay&#39;s space
+</title>
+
+
+
+    </head>
+    <body>
+        <div id="content">
+            <div class="navbar navbar-static-top">
+                <div class="navbar-inner">
+                    <div class="container-fluid">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="https://iamveryokay.github.io/myblog/"><span class=site-name>iamveryokay's space</span></a>
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right top-menu">
+                                <li >
+                                    <a href=
+                                       https://iamveryokay.github.io/myblog
+                                    >Home</a>
+                                </li>
+                                <li ><a href="https://iamveryokay.github.io/myblog/categories.html">Categories</a></li>
+                                <li ><a href="https://iamveryokay.github.io/myblog/tags.html">Tags</a></li>
+                                <li ><a href="https://iamveryokay.github.io/myblog/archives.html">Archives</a></li>
+                                <li><form class="navbar-search" action="https://iamveryokay.github.io/myblog/search.html" onsubmit="return validateForm(this.elements['q'].value);"> <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input"></form></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row-fluid">
+                    <div class="span1"></div>
+                    <div class="span10">
+<article itemscope>
+<div class="row-fluid">
+    <header class="page-header span10 offset2">
+        <h1>
+            <a href="https://iamveryokay.github.io/myblog/shi-yong-colabxia-zai-youtubeshi-pin.html">
+                使用colab下载YouTube视频
+            </a>
+        </h1>
+    </header>
+</div>
+
+<div class="row-fluid">
+        <div class="span8 offset2 article-content">
+            
+            <h1>动机</h1>
+<p>谷歌推出了类似jupyter notebook的云端python笔记表，同时还可以通过在命令行前面加上感叹号的形式访问远程的Ubuntu容器。这让我萌生了以彼之矛，破彼之盾的想法，用谷歌自家提供的平台下载自家的视频，岂不快哉？</p>
+<h1>下载流程</h1>
+<ul>
+<li>配置pip，配置好以后就可以在容器中使用youtube_dl下载视频了</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sx">!pip install youtube_dl</span>
+</code></pre></div>
+
+<ul>
+<li>下载视频</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sx">!youtube-dl  -o &quot;./%(title)s.%(ext)s&quot; https://www.youtube.com/watch?v=FVFPRstvlvk</span>
+</code></pre></div>
+
+<ul>
+<li>查看下载的视频</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sx">!ls</span>
+</code></pre></div>
+
+<ul>
+<li>把视频从容器中下载到本地目录，复制刚刚查看的内容到下面的函数里</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="kn">from</span> <span class="nn">google.colab</span> <span class="kn">import</span> <span class="n">files</span>
+<span class="n">files</span><span class="o">.</span><span class="n">download</span><span class="p">(</span><span class="s1">&#39;AVENGERS 4 ENDGAME  - 8 Minute Trailers (4K ULTRA HD) NEW 2019.webm&#39;</span><span class="p">)</span> 
+</code></pre></div>
+
+<ul>
+<li>enjoy！</li>
+</ul>
+<h1>其他</h1>
+<ul>
+<li>查看可以下载的视频类型组合</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sx">!youtube-dl -F https://www.youtube.com/watch?v=dbyOUJn4WG8</span>
+</code></pre></div>
+
+<ul>
+<li>下载想要的视频，如果是video only的话，记得把音频也选上</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="sx">!youtube-dl -f 135+250 -o &quot;./%(title)s.%(ext)s&quot; https://www.youtube.com/watch?v=dbyOUJn4WG8</span>
+</code></pre></div>
+
+<ul>
+<li>enjoy again !</li>
+</ul>
+<h1>在mac上使用youtube_dl下载视频</h1>
+<ul>
+<li><code>brew install youtube_dl</code></li>
+<li><code>youtube_dl --proxy 127.0.0.1:1080 https://www.youtube.com/watch?v=FVFPRstvlvk</code></li>
+</ul>
+
+
+             
+ 
+            
+            
+            
+
+
+
+
+
+
+
+            <hr/>
+        </div>
+        <section id="article-sidebar" class="span2">
+            <h4>Published</h4>
+            <time itemprop="dateCreated" datetime="2019-04-28T00:00:00+08:00">Sun 28 April 2019</time>
+
+            <h4>Category</h4>
+            <a class="category-link" href="https://iamveryokay.github.io/myblog/categories.html#misc-ref">Misc</a>
+            <h4>Tags</h4>
+            <ul class="list-of-tags tags-in-article">
+                <li><a href="https://iamveryokay.github.io/myblog/tags.html#colab-ref">Colab
+                    <span class="superscript">2</span>
+</a></li>
+                <li><a href="https://iamveryokay.github.io/myblog/tags.html#youtube-dl-ref">Youtube-dl
+                    <span class="superscript">2</span>
+</a></li>
+            </ul>
+<h4>Contact</h4>
+<div id="sidebar-social-link">
+</div>
+            
+
+
+
+
+
+            
+
+
+
+
+
+        </section>
+</div>
+</article>
+<!-- Root element of PhotoSwipe. Must have class pswp. -->
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    <!-- Background of PhotoSwipe.
+         It's a separate element as animating opacity is faster than rgba(). -->
+    <div class="pswp__bg"></div>
+
+    <!-- Slides wrapper with overflow:hidden. -->
+    <div class="pswp__scroll-wrap">
+
+        <!-- Container that holds slides.
+            PhotoSwipe keeps only 3 of them in the DOM to save memory.
+            Don't modify these 3 pswp__item elements, data is added later on. -->
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <!-- Default (PhotoSwipeUI_Default) interface on top of sliding area. Can be changed. -->
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                <!--  Controls are self-explanatory. Order can be changed. -->
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                <!-- Preloader demo https://codepen.io/dimsemenov/pen/yyBWoR -->
+                <!-- element will get class pswp__preloader--active when preloader is running -->
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                      <div class="pswp__preloader__cut">
+                        <div class="pswp__preloader__donut"></div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>                    </div>
+                    <div class="span1"></div>
+                </div>
+            </div>
+        </div>
+<footer>
+
+
+
+
+    <div id="fpowered">
+        Powered by: <a href="http://getpelican.com/" title="Pelican Home Page" target="_blank" rel="nofollow noopener noreferrer">Pelican</a>
+        Theme: <a href="https://elegant.oncrashreboot.com/" title="Theme Elegant Home Page" target="_blank" rel="nofollow noopener noreferrer">Elegant</a>
+    </div>
+</footer>            <script src="//code.jquery.com/jquery.min.js"></script>
+        <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>
+        <script src="https://iamveryokay.github.io/myblog/theme/js/elegant.prod.9e9d5ce754.js"></script>
+        <script>
+            function validateForm(query)
+            {
+                return (query.length > 0);
+            }
+        </script>
+
+    <script>
+    (function () {
+        if (window.location.hash.match(/^#comment-\d+$/)) {
+            $('#comment_thread').collapse('show');
+        }
+    })();
+    window.onhashchange=function(){
+        if (window.location.hash.match(/^#comment-\d+$/))
+            window.location.reload(true);
+    }
+    $('#comment_thread').on('shown', function () {
+        var link = document.getElementById('comment-accordion-toggle');
+        var old_innerHTML = link.innerHTML;
+        $(link).fadeOut(200, function() {
+            $(this).text('Click here to hide comments').fadeIn(200);
+        });
+        $('#comment_thread').on('hidden', function () {
+            $(link).fadeOut(200, function() {
+                $(this).text(old_innerHTML).fadeIn(200);
+            });
+        })
+    })
+</script>
+
+    </body>
+    <!-- Theme: Elegant built for Pelican
+        License : MIT -->
+</html>
