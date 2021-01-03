@@ -1,8 +1,12 @@
-Title: 如何创业
+Title: 如何创业讲座字幕
 Date: 2021-01-03
 Category: Lecture
 Modified: 2021-01-03 22:45
 Tags: Lecture, Startup
+
+# Lecture 1
+
+有空翻译一下整理一个笔记。
 
 ```
 Welcome.
